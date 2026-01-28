@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+header, footer {
+    background: skyblue;
+    color: black;
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    height: 50%;
+}
+
+/* TOP NAV */
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+
+ul.nav li a {
+    display: block;
+    color: #f1f1f1;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.nav li a:hover {
+    background-color: #dddddd;
+    color: black;
+}
+nav.sidebar {
+    width: 220px;
+    background: #ebebe6;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+nav.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav.sidebar li {
+    margin-bottom: 12px;
+}
+
+nav.sidebar a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main#content {
+    flex: 1;
+    padding: 20px;
+    background: #f8f8f8;
+    overflow-y: auto;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SDIHS</h1>
+    <h2>Santo Domingo Integrated High School</h2>
+    <p>Barangay Santo Domingo, Santa Rosa City, Laguna</p>
+</header>
+
+<ul class="nav">
+    <li><a onclick="we.html">Home</a></li>
+    <li><a href="1stquarter.html">First Quarter</a></li>
+    <li><a href="2ndquarter.html">Second Quarter</a></li>
+    <li><a href="#">About</a></li>
+</ul>
+
+<div class="container">
+    <nav class="sidebar">
+        <ul>
+            <li><a onclick="loadContent('home')">School</a></li>
+            <li><a onclick="loadContent('shs')">SHS</a></li>
+            <li><a onclick="loadContent('jhs')">JHS</a></li>
+        </ul>
+    </nav>
+
+    <main id="content">
+        <h2>Welcome SDIHS!</h2>
+        <p>Batang Santo likas na mabait, matalino, at aktibo!<br>
+        A place for talented students!</p>
+    </main>
+</div>
+
+<footer>
+    prenchamantee@gmail.com | 09161462041
+</footer>
+
+<script>
+function loadContent(section) {
+    let content = document.getElementById("content");
+
+    if (section === "home") {
+        content.innerHTML = `
+            <h2>School Profile</h2>
+            <h2>Mission</h2>
+<p>To protect and promote the right of every Filipino to quality, equitability culture-based, and complete basic education where:
+students learn in a child-friendly, gender-sensitive, safe and motivating environment teachers facilitate learning and contstantly nurture every learner administrators and staff, as stewards of the institution, ensure an enabling and supportive environment for effective learning to happen family, community, and other stakeholders are actively engaged and share responsibility for developing life-long learners.</p><br>
+
+<h2>Vission</h2>
+<p>We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potencial and contribute meaningfulli rebuilding the nation
+as a learner-centered public institution. The Department of Education continously improves itself to better serve its stakeholders.</p><br>
+
+<h2>Core Values</h2>
+<p>Maka-Diyos<br>Maka-Tao<br>Maka-Kalikasan<br>Maka-bansa</p>
+        `;
+    }
+
+    else if (section === "shs") {
+        content.innerHTML = `
+            <h1>SHS</h1>
+ <h2>SHS TEACHERS</h2>
+<p>ARGECEL L. TRESTIZA</p>
+<p>MARINETH PULIDO</p>
+<p>ANABEL CLEMENTE</p>
+<p>JOCELYN M. PASOL</p>
+<p>CRISTINE F. GERMINA</p>
+<p>OFELIA S. FRANCO</p>
+<p>JENNALYN R. ADATO</p>
+<p>THELMA R. LINDO</p>
+<p>SHELLA MAE V. MARAVILLA</p>
+<p>RICHARD R. TUBILLO</p>
+<p>JOSIE A. SOLLORANO</p>
+<p>JONNADEL SARSABA</p>
+<p>MIRAQUEL A. EMPERADOR </p>
+<p>JOSEPH TRAJANO</p>
+        `;
+    }
+
+    else if (section === "jhs") {
+        content.innerHTML = `
+            <h1>JHS</h1>
+            <h2>JHS SECTIONS</h2>
+<h3>GRADE 7</h3>
+<p>AGUINALDO</p>
+<p>AQUINO</p>
+<p>MACAPAGAL</p>
+<p>GARCIA</p>
+<p>MAGSAYSAY</p>
+<p>MARCOS</p>
+<p>QUEZON</p>
+
+<h3>GRADE 8</h3>
+<p>CHRONICLES</p>
+<p>COLOSSIANS</p>
+<p>CORINTHIANS</p>
+<p>EPHESIANS</p>
+<p>EXODUS</p>
+<p>HEBREWS</p>
+<p>PSALMS</p>
+
+<h3>GRADE 9</h3>
+<p>MABAIT</p>
+<p>MAGALANG</p>
+<p>MAPAGMAHAL</p>
+<p>MASIPAG</p>
+<p>MATATAG</p>
+<p>MATIPID</p>
+<p>MATAPAT</p>
+
+<h3>GRADE 10</h3>
+<p>BANAHAW</p>
+<p>MAKILING</p>
+<p>PULAG</p>
+<p> SIERRA MADRE</p>
+<nav>
+<a href="wee.html">KANLAON</a>
+<p>HALCON</p>
+<p>MAYON</p>
+
+        `;
+    }
+}
+</script>
+
+</body>
+</html>
