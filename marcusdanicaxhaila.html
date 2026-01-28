@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+html, body{
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+
+header, footer {
+    background: skyblue;
+    color: black;
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    height: 50%;
+}
+
+nav.sidebar {
+    width: 220px;
+    background: #ebebe6;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+nav.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav.sidebar li {
+    margin-bottom: 12px;
+}
+
+nav.sidebar a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main#content {
+    flex: 1;
+    padding: 20px;
+    background: #f8f8f8;
+    overflow-y: auto;
+}
+
+/* TOP NAV */
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+
+ul.nav li a {
+    display: block;
+    color: #f1f1f1;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.nav li a:hover {
+    background-color: #dddddd;
+    color: black;
+}
+
+/* Dropdown */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: lightblue;
+min-width: 160px;
+z-index: 1;
+}
+
+.dropdown-content a {
+padding: 12px 16px;
+display: block;
+color: white;
+}
+
+.dropdown-content a:hover {
+background-color: skyblue;
+color: black;
+}
+
+.dropdown:hover .dropdown-content{
+display: block;
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+<header>
+    <h1>SDIHS</h1>
+    <h2>Santo Domingo Integrated High School</h2>
+    <p>Barangay Santo Domingo, Santa Rosa City, Laguna</p>
+</header>
+
+<!-- TOP NAVIGATION -->
+<ul class="nav">
+
+    <!-- HOME DROPDOWN -->
+<li class="dropdown">
+<a href="#">Home</a>
+<div class="dropdown-content">
+<a href="#"onclick="loadContent('mission')">Mission</a>
+<a href="#"onclick="loadContent('vission')">Vission</a>
+<a href="#"onclick="loadContent('corevalues')">Core Values</a>
+</div>
+</li>
+
+    <!-- ACTIVITIES DROPDOWN -->
+<li class="dropdown">
+<a href="#">Activities</a>
+<div class="dropdown-content">
+<a href="#"onclick="loadContent('activity1')">Activity 1</a>
+<a href="#"onclick="loadContent('activity2')">Activity 2</a>
+<a href="#"onclick="loadContent('activity3')">Activity 3</a>
+</div>
+</li>
+
+    <!-- ASSESSMENT DROPDOWN -->
+<li class="dropdown">
+<a href="#">Assessment</a>
+<div class="dropdown-content">
+<a href="#"onclick="loadContent('assessment1')">Assessment 1</a>
+<a href="#"onclick="loadContent('assessment2')">Assessment 2</a>
+<a href="#"onclick="loadContent('assessment3')">Assessment 3</a>
+</div>
+</li>
+
+    <!-- REFERENCES DROPDOWN -->
+<li class="dropdown">
+<a href="#">Reference</a>
+<div class="dropdown-content">
+<a href="#"onclick="loadContent('reference1')">Book Reference</a>
+<a href="#"onclick="loadContent('reference2')">Online Reference</a>
+</div>
+</li>
+    <!-- ABOUT DROPDOWN -->
+<li class="dropdown">
+<a href="#">About</a>
+<div class="dropdown-content">
+<a href="#"onclick="loadContent('about')">Group Members</a>
+</div>
+</li>
+
+</ul>
+
+<div class="container">
+
+    <!-- SIDE BAR -->
+    <nav class="sidebar">
+        <ul>
+            <li><a onclick="loadContent('home')">Content</a></li>
+            <li><a onclick="loadContent('shs')">Performance Standard</a></li>
+            <li><a onclick="loadContent('jhs')">Content Standard</a></li>
+            <li><a onclick="loadContent('a')">Learning Competencies</a></li>
+            <li><a onclick="loadContent('b')">Objectives</a></li>
+        </ul>
+    </nav>
+
+    <main id="content">
+        <h2>Welcome SDIHS!</h2>
+        <p>Batang Santo likas na mabait, matalino, at aktibo!<br>
+        A place for talented students!</p>
+    </main>
+</div>
+
+    <!-- FOOTER -->
+<footer>
+<p>&copy;Fourth Year students Batch 2025.2026<p> 
+</footer>
+
+<script>
+function loadContent(section) {
+    let content = document.getElementById("content");
+
+    if (section === "mission") {
+        content.innerHTML = `
+                 <h1>Mission</h1>
+<p>To protect and promote the right of every Filipino to quality, equitability culture-based, and complete basic education where:
+students learn in a child-friendly, gender-sensitive, safe and motivating environment teachers facilitate learning and contstantly nurture every learner administrators and staff, as stewards of the institution, ensure an enabling and supportive environment for effective learning to happen family, community, and other stakeholders are actively engaged and share responsibility for developing life-long learners.</p> 
+        `;
+    }
+
+    if (section === "vission") {
+        content.innerHTML = `
+                 <h1>Vission</h1>
+     <p>We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potencial and contribute meaningfulli rebuilding the nation
+as a learner-centered public institution. The Department of Education continously improves itself to better serve its stakeholders.</p>
+        `;
+    }
+
+    if (section === "corevalues") {
+        content.innerHTML = `
+                 <h1>Core Values</h1>
+     <p>Maka-Diyos</p>
+     <p>Maka-Tao</p>
+     <p>Maka-Kalikasan</p>
+     <p>Maka-Bansa</p>
+        `;
+    }
+
+if (section === "assessment1") {
+        content.innerHTML = `
+                  <h1>PRE-TEST</h1><br><h2>Instructions;Read each question carefully. Choose the letter of the correct answer.</h2><br>
+<p>1. What is the main purpose of land preparation in crop production?</br>
+A. To increase soil erosion</br>
+B. To improve soil structure and make planting easier</br>
+C. To reduce soil nutrients</br>
+D. To destroy useful organisms</br>
+
+2. Which of the following is an example of a cultural practice in crop production?</br>
+A. Spraying pesticides</br>
+B. Applying chemical fertilizer</br>
+C. Crop rotation</br>
+D. Harvesting crops</br>
+
+3. Why is proper irrigation important for crops?</br>
+A. It prevents sunlight from reaching plants</br>
+B. It supplies water needed for plant growth</br>
+C. It hardens the soil</br>
+D. It removes nutrients from the soil</br>
+
+4. Which tool is commonly used for planting seeds on a small farm?</br>
+A. Harrow</br>
+B. Hoe</br>
+C. Tractor</br>
+D. Sprayer</br>
+
+5. What is the main reason farmers control weeds in crop fields?</br>
+A. Weeds improve crop yield</br>
+B. Weeds compete with crops for nutrients, water, and sunlight</br>
+C. Weeds protect crops from pests</br>
+D. Weeds increase soil moisture</br></p>
+        `;
+    }
+
+    if (section === "assessment2") {
+        content.innerHTML = `
+                 <h1>PUZZLE</h1><br>
+<h2>Direction: Find the 5 words related to agriculture practices in crop production hidden in the puzzle below.
+Words may be placed horizontally, vertically, diagonally, or backward.</h2><br>
+
+<p>Q W E R T Y U I O P A S D F G H J<br>
+Z X C V B N M L K J H G F D S A Q<br>
+L A N D P R E P A R A T I O N X C<br>
+A S D F G H J K L Q W E R T Y U I<br>
+M N B V C X Z L K J H G F D S A Q<br>
+P L A N T I N G P O I U Y T R E W<br>
+Q A S D F G H J K L Z X C V B N M<br>
+W A T E R I N G A S D F G H J K L<br>
+Z X C V B N M L K J H G F D S A Q<br>
+F E R T I L I Z I N G X C V B N M<br>
+Q W E R T Y U I O P A S D F G H J<br>
+A S D F G H J K L Z X C V B N M L<br>
+H A R V E S T I N G Q W E R T Y U<br>
+Z X C V B N M L K J H G F D S A Q<br>
+Q W E R T Y U I O P A S D F G H J<br>
+
+<br>Words to Find:<br>
+1. LAND PREPARATION<br>
+2. PLANTING<br>
+3. WATERING<br>
+4. FERTILIZING<br>
+5. HARVESTING</p>
+        `;
+    }
+
+    if (section === "assessment3") {
+        content.innerHTML = `
+                 <h1>QUIZ</h1><h2>Instructions; Read and understand each question. Select the letter of the correct answer from the given choices.</h2></br> 
+
+1. What is the primary purpose of crop rotation in agricultural practices? <br>
+A) Increasing water usage<br>
+B) Improving soil fertility<br>
+C) Reducing labor costs<br>
+D) Increasing pests</br>
+<br>2. When is the best time to apply fertilizer in crop production?<br>
+A) Before planting<br>
+B) During planting<br>
+C) After harvesting<br>
+D) When the plant already shows symptoms of deficiency</br>
+<br>3. Which of the following is a benefit of using organic farming?<br>
+A) Increased use of chemicals<br>
+B) Improving soil health<br>
+C) Higher production costs<br>
+D) Decreased harvest volume</br>
+<br>4. What is the main purpose of pruning in crop production?<br>
+A) To increase the height of the plant<br>
+B) To reduce water absorption<br>
+C) To promote healthy growth and fruiting<br>
+D) To control pests</br>
+<br>5. What is the primary function of roots in plant growth?<br>
+A) To produce flowers<br>
+B) To absorb water and nutrients<br>
+C) To produce food through photosynthesis<br>
+D) To provide support to the stem</br>
+     `;
+    }
+
+    if (section === "activity1") {
+        content.innerHTML = `
+            <h1>Instructions:
+Read each statement carefully. Identify which agricultural practice is being described. Write your answer on the blank.</h1></br><br>
+
+<p>Choices:<br>
+Site Selection<br>
+Land Preparation<br>
+Crop Selection<br>
+Planting<br>
+Transplanting<br><br>
+
+__________ Choosing an area with fertile soil, good drainage, and enough sunlight for crops.<br>
+__________ Plowing, harrowing, and leveling the soil before growing crops.<br>
+__________ Selecting seeds or crops that are suitable for the climate and soil condition.<br>
+__________ Putting seeds directly into the soil at proper depth and spacing.<br>
+__________ Moving young seedlings from a seedbed to the main field.<br></p>
+        `;
+    }
+
+if (section === "activity2") {
+        content.innerHTML = `
+            <h1>Instructions:
+Match each agricultural practice in Column A with the correct description in Column B.</h1><br>
+
+<p>Column A<br>
+1. Land preparation <br>
+2. Planting <br>
+3. Irrigation <br>
+4. Weeding <br>
+5. Harvesting<br><br>
+
+Column B<br>
+A. Removing unwanted plants that compete with crops<br>
+B. Preparing the soil by plowing and leveling<br>
+C. Supplying water to crops<br>
+D. Collecting mature crops from the field<br>
+E. Placing seeds into the soil at the correct depth<br></p>
+        `;
+    }
+
+     if (section === "activity3") {
+        content.innerHTML = `
+            <h1> Directions: Read each situation carefully. Write the correct agricultural practice being described.</h1><br>
+
+<p>_____1.The farmer plows and loosens the soil to make it ready for planting.<br>
+_____2.Healthy and good-quality seeds are chosen before planting.<br>
+_____3.Seeds are placed into the soil at proper spacing and depth.<br>
+_____4.Crops are supplied with enough water, especially during dry seasons.<br>
+_____5.Manure or chemical fertilizers are added to improve soil nutrients.<br>
+</p>
+        `;
+    }
+
+    if (section === "reference1") {
+        content.innerHTML = `
+                 <h1>Book Reference</h1><h1>Technology and Livelihood Education<br>Skills for Life and Career Textbook</h1>
+<img src="ict.jpg" weight="500" height="500">
+        `;
+    }
+
+
+    if (section === "reference2") {
+        content.innerHTML = `
+                 <h1>Online Reference</h1><br>
+<a href="https://www.google.com/search?q=agricultural+practices+in+crop+production+meaning&oq=agricultural+practices+in+crop+production+meaning+&gs_lcrp=EgZjaHJvbWUyCggAEEUYFhgeGDkyDQgBEAAYhgMYgAQYigUyDQgCEAAYhgMYgAQYigUyDQgDEAAYhgMYgAQYigUyDQgEEAAYhgMYgAQYigUyBwgFEAAY7wUyCggGEAAYogQYiQUyCggHEAAYgAQYogTSAQkxMjkwNGowajmoAg6wAgHxBT8m_rodYXeq8QU_Jv66HWF3qg&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8">Agricultural</a><br>
+
+<a href="https://www.google.com/search?q=definition+of+planting&client=ms-android-transsion&hs=ueUU&sca_esv=8770e74ec2be9912&sxsrf=ANbL-n5S-Q86ZIfoxASoyL8YWNEtCrxeCg%3A1768353610925&ei=Su9maaeYOJKD4-EPwZWgqAo&oq=definition+of+planting&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIhZkZWZpbml0aW9uIG9mIHBsYW50aW5nMgsQABiABBiRAhiKBTIGEAAYBxgeMgYQABgHGB4yBRAAGIAEMgUQABiABDIEEAAYHjIEEAAYHjIEEAAYHkjjJVDLGljCH3ABeAGQAQGYAeEFoAG3EqoBCTMtMS4wLjIuMbgBA8gBAPgBAZgCAqAClgXCAgoQABiwAxjWBBhHmAMAiAYBkAYIkgcFMS41LTGgB_AWsgcDNS0xuAeCBcIHAzMtMsgHGYAIAA&sclient=mobile-gws-wiz-serp#ebo=0">Planting</a><br>
+
+<a href="https://www.google.com/search?q=definition+of+transplanting&oq=definition+of+transplanting&gs_lcrp=EgZjaHJvbWUyFAgAEEUYORhGGPkBGJECGIAEGIoFMg0IARAAGJECGIAEGIoFMggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMggICBAAGBYYHjINCAkQABiGAxiABBiKBTINCAoQABiGAxiABBiKBTINCAsQABiGAxiABBiKBTIKCAwQABiABBiiBDIKCA0QABiABBiiBDIKCA4QABiiBBiJBdIBCDU2NjJqMGo5qAIOsAIB8QVL8-f06TK8Bw&client=ms-android-transsion&sourceid=chrome-mobile&ie=UTF-8#ebo=0">Transplanting</a><br>
+
+<a href="https://www.google.com/search?q=land+preparation+&client=ms-android-transsion&hs=veUU&sca_esv=8770e74ec2be9912&sxsrf=ANbL-n44kkNuUXYDmRk0YlVChc51i6i3tw%3A1768353704483&ei=qO9maYmiHf7k2roPxfO_gQk&oq=land+preparation+&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIhFsYW5kIHByZXBhcmF0aW9uIDIKEAAYgAQYFBiHAjIKEAAYgAQYFBiHAjILEAAYgAQYkQIYigUyCxAAGIAEGJECGIoFMgsQABiABBiRAhiKBTIKEAAYgAQYQxiKBTIFEAAYgAQyBRAAGIAESNsrUKMLWKIocAN4AZABAJgB2wGgAb0TqgEGMC4xMS4zuAEDyAEA-AEBmAIRoAKPFqgCIMICBxAjGCcY6gLCAhAQIxigBhgnGOoCGKsGGN0FwgIQEAAYAxi0AhjqAhiPAdgBAcICEBAuGAMYtAIY6gIYjwHYAQHCAgoQIxiABBgnGIoFwgILEAAYgAQYsQMYgwHCAggQABiABBixA8ICCxAuGIAEGLEDGIMBwgIOEC4YgAQYsQMYgwEYigXCAg4QABiABBixAxiDARiKBcICDhAuGIAEGLEDGNEDGMcBwgITEAAYgAQYkQIYigUYRhj5ARijBcICFhAAGIAEGJECGIoFGEYY-QEYjAXYAQHCAg0QABiABBixAxhDGIoFmAM08QVwm-R3uq2qW7oGBAgBGAqSBwUzLjguNqAH7lKyBwUwLjguNrgH-hTCBwoyLTIuMTEuMi4yyAfLAoAIAA&sclient=mobile-gws-wiz-serp">Land Preparation</a><br>
+
+<a href="https://www.google.com/search?q=crop+selection&client=ms-android-transsion&hs=ez9o&sca_esv=8770e74ec2be9912&sxsrf=ANbL-n4-VStfd3iD5HHBYXpB-fhLJatq6w%3A1768353986395&ei=wvBmaaLvF8-T1e8Plte4oAw&oq=crop+selection&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIg5jcm9wIHNlbGVjdGlvbjIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESNstUNALWOMrcAJ4AZABAJgB4AGgAe8SqgEGMC4xMy4xuAEDyAEA-AEBmAIQoALlFKgCIcICBxAjGCcY6gLCAhAQIxigBhgnGOoCGKsGGN0FwgIQEAAYAxi0AhjqAhiPAdgBAcICEBAuGAMYtAIY6gIYjwHYAQHCAgoQIxiABBgnGIoFwgIKEAAYgAQYQxiKBcICChAuGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIQEAAYgAQYsQMYQxiDARiKBcICCBAAGIAEGLEDwgIIEAAYgAQYyQOYAzLxBaLWp0KKQkPDugYECAEYCpIHBjIuMTIuMqAH3ECyBwYwLjEyLjK4B5IUwgcKMi0zLjExLjEuMcgH8AGACAA&sclient=mobile-gws-wiz-serp">Crop Selection</a>
+
+<a href="https://www.google.com/search?q=crop+selection&client=ms-android-transsion&hs=ez9o&sca_esv=8770e74ec2be9912&sxsrf=ANbL-n4-VStfd3iD5HHBYXpB-fhLJatq6w%3A1768353986395&ei=wvBmaaLvF8-T1e8Plte4oAw&oq=crop+selection&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIg5jcm9wIHNlbGVjdGlvbjIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESNstUNALWOMrcAJ4AZABAJgB4AGgAe8SqgEGMC4xMy4xuAEDyAEA-AEBmAIQoALlFKgCIcICBxAjGCcY6gLCAhAQIxigBhgnGOoCGKsGGN0FwgIQEAAYAxi0AhjqAhiPAdgBAcICEBAuGAMYtAIY6gIYjwHYAQHCAgoQIxiABBgnGIoFwgIKEAAYgAQYQxiKBcICChAuGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIQEAAYgAQYsQMYQxiDARiKBcICCBAAGIAEGLEDwgIIEAAYgAQYyQOYAzLxBaLWp0KKQkPDugYECAEYCpIHBjIuMTIuMqAH3ECyBwYwLjEyLjK4B5IUwgcKMi0zLjExLjEuMcgH8AGACAA&sclient=mobile-gws-wiz-serp">Site Selection</a>
+        `;
+    }
+
+    if (section === "about") {
+        content.innerHTML = `
+                 <h1>Group Members</h1><br>
+<a href="https://www.facebook.com/share/17bhsybCnp/">Amante, Prench Clarizze B.</a><br>
+<a href="https://www.facebook.com/danicalyn.deguzman.39">De Guzman, Danica Lyn C.</a><br>
+<a href="https://www.facebook.com/share/182WcQRPMc/">Patano, Xhaila Xen</a><br>
+<a href="https://www.facebook.com/marcus.ovejera.9">Ovejera, Marcus John</a>
+        `;
+    }
+
+    if (section === "home") {
+        content.innerHTML = `
+                 <h1>Content</h1>
+<h2>Agricultural Practices in Crop
+Production</h2>
+<p>Agricultural practices in crop production are the systematic methods and activities farmers use to cultivate crops for yield, including preparing soil, planting, irrigating, fertilizing, managing pests, harvesting, and storing, all influenced by climate, technology, and sustainability goals.</p>
+
+<ul>
+
+<li>Site selection</li>
+<p>Site selection involves detailed analysis to match project needs with potential site advantages, moving from broad criteria to specific location scoring.
+
+<li>Land preparation</li>
+<p>Land preparation is the crucial process of getting soil ready for planting by clearing, tilling (plowing, harrowing), leveling, and amending it to create a favorable environment for germination and growth, improving aeration, drainage, nutrient availability, and weed control, ultimately boosting crop yield and health.</p>
+
+<li>Crop selection</li>
+<p>Crop selection is choosing plants to grow based on suitability to local climate, soil, water, and market needs, balancing economic goals with environmental factors like pests, diseases, and resource availability, often using crop rotation for soil health and pest management.</p>
+
+<li>Planting</li>
+<p>Planting is the act of placing seeds, seedlings, or young plants into the ground or a container to grow, but it also broadly means establishing or introducing something (like an idea or habit) or secretly placing an object (like evidence).</p>
+
+<li>Transplanting</li>
+<p>Transplanting is relocation, resettlement, or grafting, allowing for growth in a better environment or restoring function in a living body, and also refers to people moving to new places.</p>
+        `;
+    }
+
+    else if (section === "shs") {
+        content.innerHTML = `
+            <h1>Performance Standard</h1>
+ <p>The learners perform the utilizatian of productivity tools in a safe and responsible manner</p>
+        `;
+    }
+
+    else if (section === "jhs") {
+        content.innerHTML = `
+            <h1>Content Standard</h1>
+<p>Demonstrate the understanding of using productivity software</p>
+
+        `;
+    }
+
+    if (section === "a") {
+        content.innerHTML = `
+            <h1>Learning Competencies</h1>
+<p>Perform Agricultural practices in crop production</p>
+        `;
+    }
+
+    if (section === "b") {
+        content.innerHTML = `
+           <h1>Objectives:</h1>
+<p>At the end of this lesson, you are expected to:<br></p>
+<p>1. Discuss agricultural practices in crop production in terms of:<br></p>
+<p>A. Site selection <br></p>
+<p>B. Land preparation <br></p>
+<p>C. Planting <br></p>
+<p>D. Transplanting <br></p>
+<p>E. Weeding and cultivating <br></p>
+<p>F. Irrigation and water supply <br></p>
+<p>G. Fertilizing crops; <br></p>
+<p>2. Demonstrate agricultural practices in crop production; and <br></p>
+<p>3. Explain the proper care and maintenance and natural prevention and control of common pests and diseases (using natural farming/organic farming).</p>
+
+        `;
+    }
+
+}
+</script>
+
+</body>
+</html>
